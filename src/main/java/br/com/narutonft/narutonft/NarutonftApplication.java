@@ -8,7 +8,7 @@ public class NarutonftApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NarutonftApplication.class, args);
-		
+		System.out.println("TESTE"); 
 	}
 
 }

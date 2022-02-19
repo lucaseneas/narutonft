@@ -1,9 +1,40 @@
 <html>
-	<head th:replace="~{base :: head}"></head>
-	<body>
-		<nav th:replace="~{base :: cabecalho}"></nav>
-		
-		<div th:replace="~{base :: rodape}"></div>
-		
-	</body>
+<head th:replace="~{base :: head}"></head>
+<body>
+	<nav th:replace="~{base :: cabecalho}"></nav>
+
+	<div class="mt-5 container shadow-lg p-3 mb-5 bg-body rounded ">
+		<h1>Insira seus dados para cadastro</h1>
+		<div th:if="${param.error}">Invalid username and password.</div>
+		<div th:if="${param.logout}">You have been logged out.</div>
+
+		<form th:action="@{/cadastroUsuario/novo}" class="card-body" method="post">
+
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Nome
+				</label> <input type="name" name="name" class="form-control"
+					placeholder="Nome" />
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Email
+					cadastrado</label> <input type="text" name="email" class="form-control"
+					placeholder="Email" />
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Senha
+				</label> <input type="password" name="password" class="form-control"
+					placeholder="Senha" />
+			</div>
+			<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Foto de Perfil</label> 
+				<input type="file" class="form-control" name= "picture" id="picture" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+			</div>
+
+			<div class="d-flex">
+				<input type="submit" class="btn btn-warning" value="Relizar Cadastro" />
+			</div>
+	</div>
+
+	<div th:replace="~{base :: rodape}"></div>
+</body>
 </html>
